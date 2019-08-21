@@ -1,8 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model IEnumerable<KeyValuePair<string, string>>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Server Configuration</h1>
+    <p>FOR DEMOS ONLY. DO NOT USE IN PRODUCTION. YOU MAY EXPOSE KEYS PUBLICLY.</p>
 </div>
+
+<table>
+    <thead>
+        <tr>
+            <td>Key</td>
+            <td>Value</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
